@@ -1,3 +1,7 @@
-document.getElementById("myButton").onclick = function() {
-    alert("Hello!");
-};
+const rideButton = document.getElementById("rideButton");
+
+rideButton.addEventListener("click", function() {
+
+    alert("Keep pushing! 🛹🔥");
+
+});
