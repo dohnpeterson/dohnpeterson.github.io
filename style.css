@@ -334,7 +334,7 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
     .navbar {
         padding: 20px;
