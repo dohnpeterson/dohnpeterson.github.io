@@ -13,19 +13,9 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     background: #111111;
     color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.full-width {
-    width: 100vw;
-    height: auto;
-    display: block;
-    margin: 0;
-    padding: 0;
 }
 
 /* =========================
@@ -89,49 +79,8 @@ body {
 
     padding: 120px 10% 80px;
 
-    background:
-        linear-gradient(rgba(17, 17, 17, 0.55), rgba(17, 17, 17, 0.55)),
-        url("your-image.jpg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
     overflow: hidden;
 }
-
-.hero-content {
-    max-width: 650px;
-}
-
-.small-title,
-.section-label {
-    color: #ff4d00;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(65px, 11vw, 150px);
-    line-height: 0.85;
-    font-weight: 900;
-    letter-spacing: -7px;
-}
-
-.hero h1 span {
-    color: #ff4d00;
-}
-
-.hero-content > p:not(.small-title) {
-    max-width: 500px;
-    margin: 35px 0;
-    color: #bbbbbb;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
 
 /* =========================
    BUTTON
