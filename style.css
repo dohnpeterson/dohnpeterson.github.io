@@ -79,7 +79,43 @@ body {
 
     padding: 120px 10% 80px;
 
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
     overflow: hidden;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title,
+.section-label {
+    color: #ff4d00;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 11vw, 150px);
+    line-height: 0.85;
+    font-weight: 900;
+    letter-spacing: -7px;
+}
+
+.hero h1 span {
+    color: #ff4d00;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 500px;
+    margin: 35px 0;
+    color: #bbbbbb;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
 /* =========================
