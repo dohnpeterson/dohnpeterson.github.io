@@ -81,12 +81,12 @@ body {
     padding: 120px 10% 80px;
 
     background:
-        linear-gradient(
-            135deg,
-            #111111 0%,
-            #1b1b1b 50%,
-            #272727 100%
-        );
+        linear-gradient(rgba(17, 17, 17, 0.55), rgba(17, 17, 17, 0.55)),
+        url("your-image.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     overflow: hidden;
 }
