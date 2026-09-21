@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+   GENERAL
 ========================= */
 
 * {
@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    background: #111;
+    background: #111111;
     color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -26,22 +26,21 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
-    z-index: 1000;
-
     width: 100%;
-    padding: 22px 7%;
+    z-index: 100;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 7%;
 
     background: rgba(17, 17, 17, 0.9);
     backdrop-filter: blur(10px);
 }
 
 .logo {
-    color: #fff;
+    color: white;
     font-size: 22px;
     font-weight: 900;
     letter-spacing: -1px;
@@ -54,17 +53,26 @@ body {
 }
 
 .nav-links a {
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
+    color: white;
     text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
     text-transform: uppercase;
-
-    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
     color: #ff4d00;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.full-width {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
@@ -74,36 +82,19 @@ body {
 
 .hero {
     padding-top: 74px;
+    overflow: hidden;
 }
-
-/* Image */
-
-.full-width {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
-/* =========================
-   COMING SOON
-========================= */
 
 .hero-content {
-    padding: 100px 10% 120px;
+    max-width: 650px;
 
-    background: #111;
+    padding: 120px 10% 80px;
 }
 
 .hero h1 {
-    max-width: 650px;
-
-    color: #f5f5f5;
-
     font-size: clamp(65px, 11vw, 150px);
-    font-weight: 900;
     line-height: 0.85;
+    font-weight: 900;
     letter-spacing: -7px;
 }
 
@@ -119,11 +110,7 @@ body {
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 18px 20px;
-    }
-
-    .logo {
-        font-size: 18px;
+        padding: 20px;
     }
 
     .nav-links {
@@ -134,16 +121,12 @@ body {
         font-size: 10px;
     }
 
-    .hero {
-        padding-top: 64px;
-    }
-
     .hero-content {
-        padding: 70px 20px 90px;
+        padding: 120px 10% 80px;
     }
 
     .hero h1 {
-        font-size: clamp(60px, 18vw, 100px);
+        font-size: clamp(65px, 18vw, 100px);
         letter-spacing: -4px;
     }
 }
