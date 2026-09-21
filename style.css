@@ -1,5 +1,5 @@
 /* =========================
-   GENERAL
+   RESET
 ========================= */
 
 * {
@@ -13,10 +13,11 @@ html {
 }
 
 body {
-    background: #111111;
+    background: #111;
     color: #f5f5f5;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 
 /* =========================
    NAVIGATION
@@ -25,27 +26,26 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    z-index: 1000;
+
     width: 100%;
-    z-index: 100;
+    padding: 22px 7%;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    padding: 22px 7%;
+    justify-content: space-between;
 
     background: rgba(17, 17, 17, 0.9);
     backdrop-filter: blur(10px);
 }
 
 .logo {
+    color: #fff;
     font-size: 22px;
     font-weight: 900;
     letter-spacing: -1px;
-}
-
-.logo span {
-    color: #ff4d00;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -54,11 +54,13 @@ body {
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
+    color: #fff;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 700;
+    text-decoration: none;
     text-transform: uppercase;
+
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -71,256 +73,59 @@ body {
 ========================= */
 
 .hero {
+    position: relative;
     min-height: 100vh;
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    padding: 120px 10% 80px;
-
-    background-size: 100% auto;
-    background-position: center;
-    background-repeat: no-repeat;
+    justify-content: center;
 
     overflow: hidden;
 }
 
-.hero-content {
-    max-width: 650px;
+.full-width {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
 }
 
-.small-title,
-.section-label {
-    color: #ff4d00;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    padding: 120px 10% 80px;
 }
 
 .hero h1 {
+    max-width: 650px;
+
     font-size: clamp(65px, 11vw, 150px);
-    line-height: 0.85;
     font-weight: 900;
+    line-height: 0.85;
     letter-spacing: -7px;
 }
 
 .hero h1 span {
     color: #ff4d00;
-}
-
-.hero-content > p:not(.small-title) {
-    max-width: 500px;
-    margin: 35px 0;
-    color: #bbbbbb;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.button {
-    display: inline-block;
-
-    padding: 16px 28px;
-
-    background: #ff4d00;
-    color: white;
-
-    border: none;
-    text-decoration: none;
-
-    font-weight: bold;
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-.button:hover {
-    background: white;
-    color: #111111;
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   SKATEBOARD
-========================= */
-
-.skateboard {
-    font-size: 180px;
-
-    transform: rotate(-15deg);
-
-    animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-
-    0%, 100% {
-        transform: rotate(-15deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(-15deg) translateY(-20px);
-    }
-
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    padding: 120px 10%;
-}
-
-.about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-
-    background: #f2f2f2;
-    color: #111111;
-}
-
-h2 {
-    font-size: clamp(50px, 8vw, 100px);
-    line-height: 0.9;
-    letter-spacing: -4px;
-}
-
-h2 span {
-    color: #ff4d00;
-}
-
-.about-text {
-    align-self: end;
-
-    font-size: 22px;
-    line-height: 1.7;
-    color: #555555;
-}
-
-
-/* =========================
-   TRICKS
-========================= */
-
-.tricks {
-    background: #151515;
-}
-
-.tricks > h2 {
-    margin-bottom: 60px;
-}
-
-.trick-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.trick-card {
-    padding: 35px;
-
-    min-height: 280px;
-
-    background: #222222;
-
-    border: 1px solid #333333;
-
-    transition: 0.3s;
-}
-
-.trick-card:hover {
-    transform: translateY(-10px);
-    border-color: #ff4d00;
-}
-
-.trick-number {
-    color: #ff4d00;
-    font-size: 14px;
-    font-weight: bold;
-
-    margin-bottom: 50px;
-}
-
-.trick-card h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.trick-card p {
-    color: #999999;
-    line-height: 1.6;
-}
-
-
-/* =========================
-   QUOTE
-========================= */
-
-.quote {
-    padding: 150px 10%;
-
-    text-align: center;
-
-    background: #ff4d00;
-    color: #111111;
-}
-
-.quote h2 {
-    max-width: 1000px;
-    margin: auto;
-}
-
-.quote h2 span {
-    color: white;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    text-align: center;
-}
-
-.contact h2 {
-    margin-bottom: 30px;
-}
-
-.contact > p:not(.section-label) {
-    max-width: 600px;
-    margin: 0 auto 35px;
-
-    color: #999999;
-    line-height: 1.7;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 30px 7%;
-
-    display: flex;
-    justify-content: space-between;
-
-    border-top: 1px solid #333333;
-
-    color: #777777;
-    font-size: 12px;
 }
 
 
@@ -329,9 +134,12 @@ footer {
 ========================= */
 
 @media (max-width: 600px) {
-
     .navbar {
-        padding: 20px;
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 18px;
     }
 
     .nav-links {
@@ -342,28 +150,12 @@ footer {
         font-size: 10px;
     }
 
-    .hero {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+    .hero-content {
+        padding: 100px 20px 60px;
     }
 
-    .skateboard {
-        font-size: 100px;
-        margin-top: 50px;
+    .hero h1 {
+        font-size: clamp(60px, 18vw, 100px);
+        letter-spacing: -4px;
     }
-
-    .about {
-        grid-template-columns: 1fr;
-    }
-
-    .trick-grid {
-        grid-template-columns: 1fr;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 10px;
-    }
-
 }

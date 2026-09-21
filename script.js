@@ -1,7 +1,7 @@
 const rideButton = document.getElementById("rideButton");
 
-rideButton.addEventListener("click", function() {
-
-    alert("Keep pushing! 🛹🔥");
-
-});
+if (rideButton) {
+    rideButton.addEventListener("click", () => {
+        alert("Keep pushing! 🛹🔥");
+    });
+}
