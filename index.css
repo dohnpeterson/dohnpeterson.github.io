@@ -1,0 +1,434 @@
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+    position: relative;
+    padding-top: 74px;
+    overflow: hidden;
+    background: #000;
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: contrast(1.08) saturate(0.9);
+    transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.hero:hover .full-width {
+    transform: scale(1.008);
+    filter: contrast(1.12) saturate(1.05);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(182, 255, 0, 0.05),
+            transparent 35%,
+            rgba(157, 78, 221, 0.08)
+        );
+    mix-blend-mode: screen;
+}
+
+/* =========================================================
+   HOME PAGE LAYOUT
+========================================================= */
+
+.site-layout {
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    min-height: calc(100vh - 74px);
+    border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: sticky;
+    top: 74px;
+    height: calc(100vh - 74px);
+    padding: 40px 25px;
+    background:
+        linear-gradient(
+            160deg,
+            #101010 0%,
+            #0b0b0b 70%,
+            #111111 100%
+        );
+    border-right: 1px solid var(--line);
+    overflow: hidden;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--purple),
+            transparent
+        );
+    opacity: 0.5;
+}
+
+.sidebar::after {
+    content: "RIDE IT. REMEMBER IT. KEEP IT.";
+    position: absolute;
+    right: 0;
+    top: 60%;
+    color: rgba(182, 255, 0, 0.035);
+    font-size: 50px;
+    font-weight: 900;
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    transform: translateY(-50%) rotate(180deg);
+    pointer-events: none;
+}
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-nav a {
+    position: relative;
+    display: block;
+    padding: 11px 10px;
+    color: #d7d7d7;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-left: 2px solid transparent;
+    transition:
+        color 0.2s ease,
+        padding-left 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+    color: var(--green);
+    padding-left: 17px;
+    border-left-color: var(--green);
+    background: rgba(182, 255, 0, 0.045);
+}
+
+/* =========================================================
+   SIDEBAR SOCIAL
+========================================================= */
+
+.sidebar-social {
+    position: absolute;
+    left: 25px;
+    bottom: 30px;
+    display: flex;
+    gap: 12px;
+}
+
+.sidebar-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--white);
+    font-size: 19px;
+    text-decoration: none;
+    border: 1px solid #3a3a3a;
+    background: #111111;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.sidebar-social a:hover {
+    color: #000;
+    background: var(--green);
+    border-color: var(--green);
+    transform: translateY(-3px) rotate(-3deg);
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.content {
+    height: calc(100vh - 74px);
+    padding: 70px 8% 100px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-color: #292929 #080808;
+    scrollbar-width: thin;
+}
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.content-section {
+    position: relative;
+    min-height: 80vh;
+    padding: 80px 0;
+    scroll-margin-top: 30px;
+    border-bottom: 1px solid var(--line);
+}
+
+.content-section::before {
+    content: "///";
+    display: block;
+    margin-bottom: 15px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+.content-section h1 {
+    margin-bottom: 50px;
+    color: var(--white);
+    font-size: clamp(45px, 6vw, 85px);
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: -4px;
+    text-transform: uppercase;
+}
+
+.content-section h1::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 6px;
+    margin-top: 18px;
+    background: var(--green);
+    transform: skew(-20deg);
+}
+
+.content-section p {
+    max-width: 900px;
+    color: var(--gray-light);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   ABOUT INFORMATION CARDS
+========================================================= */
+
+.about-section {
+    max-width: 1000px;
+    margin-bottom: 80px;
+    padding: 35px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.025),
+            rgba(255, 255, 255, 0.008)
+        );
+    border-left: 3px solid var(--purple);
+    transition:
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.about-section:hover {
+    border-left-color: var(--green);
+    transform: translateX(5px);
+}
+
+.about-section h2 {
+    margin-bottom: 25px;
+    color: var(--green);
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.about-section p {
+    color: #d2d2d2;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   PROGRAM LIST
+========================================================= */
+
+.about-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-section li {
+    position: relative;
+    margin-bottom: 14px;
+    padding: 12px 15px 12px 38px;
+    color: #d2d2d2;
+    background: rgba(255, 255, 255, 0.025);
+    border-bottom: 1px solid #252525;
+}
+
+.about-section li::before {
+    content: "✦";
+    position: absolute;
+    left: 14px;
+    color: var(--green);
+}
+
+/* =========================================================
+   LEADERSHIP
+========================================================= */
+
+.leadership {
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    background: #0d0d0d;
+    border: 1px solid #333;
+}
+
+.leader {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #333;
+    transition: background 0.2s ease;
+}
+
+.leader:hover {
+    background: rgba(182, 255, 0, 0.035);
+}
+
+.leader:last-child {
+    border-bottom: none;
+}
+
+.leader h3,
+.leader p {
+    margin: 0;
+    padding: 20px 25px;
+}
+
+.leader h3 {
+    color: var(--white);
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.leader p {
+    color: var(--gray);
+    border-left: 1px solid #333;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+    .site-layout {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 25px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .sidebar::after {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar-social {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        margin-top: 25px;
+    }
+
+    .content {
+        height: auto;
+        padding: 50px 6%;
+        overflow: visible;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        height: 65px;
+        padding: 0 18px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .dropdown-menu {
+        width: 220px;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .content-section {
+        padding: 60px 0;
+    }
+
+    .content-section h1 {
+        font-size: clamp(38px, 12vw, 60px);
+        letter-spacing: -2px;
+    }
+
+    .about-section {
+        padding: 25px;
+    }
+
+    .about-section h2 {
+        font-size: 25px;
+    }
+
+    .leader {
+        grid-template-columns: 1fr;
+    }
+
+    .leader p {
+        border-left: none;
+        border-top: 1px solid #333;
+    }
+}
